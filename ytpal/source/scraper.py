@@ -3,7 +3,7 @@ from googleapiclient.discovery import build
 from dotenv import load_dotenv
 import pandas as pd
 
-# channel_id = 'UC4EbRppBvaHjVT3ys-9eGDg'
+
 load_dotenv()
 
 # Initializing googleapi client to scrap video details

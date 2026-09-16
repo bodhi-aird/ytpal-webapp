@@ -204,7 +204,7 @@ def values_normalizer(vids_df):
 
     for col in target_cols:
         is_value_zero = (modified_df[col] == 0) | (modified_df[col] == 0.0)
-        # >>>>> HIDDEN Pandas rule: A Series of True/False values acts as a dynamic label filter inside .loc
+        # >>>>> HIDDEN Pandas rule: A Series of True/False values can act as a dynamic label filter inside .loc
         
         if is_value_zero.sum() == 0:
             continue

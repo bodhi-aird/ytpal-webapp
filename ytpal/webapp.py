@@ -22,7 +22,7 @@ st.markdown(
     section.stMain .block-container { 
         padding-top: 1.2rem; 
     }
-    /* 🎯 THE CORRECTION: Forcefully compress the title bottom margin and divider gap spacing */
+    /* Forcefully compress the title bottom margin and divider gap spacing */
     .stHeading h1 {
         text-align: center !important;
         margin-bottom: -15px !important;  /* Pushes the divider closer to the title text */
@@ -193,7 +193,7 @@ with tab1:
                     for summary in genres_summary:
                         st.write(summary)
 
-                    st.markdown("#### 🧠Genre Assessment Conclusion")
+                    st.markdown("#### Genre Assessment Conclusion")
                     st.info(genres_conclusion)
 
                     st.markdown("<br>", unsafe_allow_html=True)
@@ -233,7 +233,7 @@ with tab1:
                     
                     for index, row in filtered_vids.iterrows():
                         advice_text = row['insights_advices']
-                        with st.expander(f"🎬 Video: {row['video_title'].title()} ({int(row['days_elapsed'])} Days Old)"):
+                        with st.expander(f"Video: {row['video_title'].title()} ({int(row['days_elapsed'])} Days Old)"):
                             col1, col2, col3 = st.columns(3)
                             col1.write(f"📊 **Views:** {int(row['views']):,}")
                             col2.write(f"⚡ **Velocity:** {row['views_per_day']:.1f} VPD")
@@ -250,8 +250,8 @@ with tab1:
                         
                     # Error Guard: To check and handle wrong input fields instantly!
             except ValueError as custom_input_error:
-                st.error(f"⚠️ **Invalid Input Entry:** {str(custom_input_error)}")
-                st.info("💡 **Pro-Tip:** Make sure you are entering the raw alphanumeric Channel ID string rather than a handle name, video link, or custom URL shortcut text.")
+                st.error(f"**Invalid Input Entry:** {str(custom_input_error)}")
+                st.info("**Pro-Tip:** Make sure you are entering the raw alphanumeric Channel ID string rather than a handle name, video link, or custom URL shortcut text.")
                 
             except Exception as global_api_error:
-                st.error(f"🚨 **API Error Connection Failure:** {str(global_api_error)}")
+                st.error(f"**API Error Connection Failure:** {str(global_api_error)}")
