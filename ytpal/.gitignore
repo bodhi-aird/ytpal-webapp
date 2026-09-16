@@ -1,0 +1,15 @@
+
+.venv
+.env   
+
+# Python compilation runtime bytecode caches
+__pycache__/
+*.pyc
+
+# Local IDE workspace UI configurations
+.vscode/
+
+# 📦 Local isolated sandboxed environment directories
+.venv/
+env/
+venv/
