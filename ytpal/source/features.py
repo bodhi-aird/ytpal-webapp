@@ -74,16 +74,16 @@ def mark_genre(title_description_col):
         "itinerary", "airport", "train", "railway", "trekking", "safari", "mountains", "beach", "hills", 
         "backpacking", "roadtrip", "luggage", "homestay", "tent", "bonfire", "waterfall", "monastery", "zoo",
         "airbnb", "wanderlust", "motovlog", "scenic", "yatra", "ghoomne", "ghoomna", "safar", "outing", "nightout",
-        "musafir", "darshan", "kedarnath", "manali", "pahad", "pahado", "samundar", "videsh", "bhatakna"
+        "musafir", "darshan", "kedarnath", "manali", "pahad", "pahado", "samundar", "videsh", "bhatakna",'drive'
     },
     "gaming": { 
         # Game Titles & Ecosystems
         "gaming", "gameplay", "freefire", "pubg", "bgmi", "gta", "minecraft", "ps5", "xbox", "nintendo", 
-        "gamer", "cod", "fortnite", "playstation", "rtx", "graphics", "emulator", "1v1", "1v4", "solosquad" 
+        "gamer", "cod", "fortnite", "playstation", "rtx", "graphics", "emulator", "1v1", "1v4", "solosquad", 
         "montage", "clutch", "playing", "walkthrough", "palythrough", "trolling", "squads", "play", "ranked",
         "noob", "pro", "aimbot", "headshot", "ping", "frag", "killmontage", "activision",
         "bande", "enemy", "maro", "hotdrop", "goli", "revive", "bachao", "easports",
-        "booyah", "pubg", "killed", "apex", "horror", "dota", "lol", "codm", "krafton", "supercell",  
+        "booyah", "killed", "apex", "horror", "dota", "lol", "codm", "krafton", "supercell",  
     },
     "people_vlogs_howto": {
         'anniversary', 'awareness', 'baje', 'bazaar', 'behen', 'bhai', 'bhangra', 'birthday',
@@ -91,7 +91,9 @@ def mark_genre(title_description_col):
         'environment', 'fashion', 'fitness', 'fundraiser', 'gifting', 'grooming', 'hairstyle', 'house', 'humanity', 'kaise banaye',
         'khana', 'kitchen', 'lifestyle', 'madad', 'makeup', 'marriage', 'minivlog', 'mumbai', 'mummy', 'nacho', 'ngo', 'outfit',
         'papa', 'parents', 'parivar', 'podcastghar', 'rasoi', 'recipe', 'rescue', 'rishtedar', 'saree', 'shaam', 'shadi',
-        'social', 'style', 'village', 'vlogger', 'vlogging', 'vlogs', 'wedding', 'welfare', 'fest', 'festival', 'magic'
+        'social', 'style', 'village', 'vlogger', 'vlogging', 'vlogs', 'wedding', 'welfare', 'fest', 'festival', 'magic','rampwalk',
+        'cake','bake', 'art','sketching','painting','repair','fix','fixing','shopping','garage','showroom','vlog','challenge'
+
     },
     "comedy": {
         'bakchod', 'bakchodi', 'chutkula', 'comedy', 'entertainment', 'gags', 'gajab', 'gazab', 'haso',
@@ -103,7 +105,7 @@ def mark_genre(title_description_col):
         # Geopolitics & Governance Pillars
         'bill', 'bjp', 'cm', 'congress', 'constitution', 'country', 'court', 'crud', 'debate', 'economy', 'election',
         'gandhi', 'gdp', 'geopolitics', 'government', 'investigation', 'law', 'leader', 'modi', 'navy', 'neta', 'parliament', 'pm',
-        'policy', 'politics', 'power', 'prime minister', 'protest', 'relations', 'rights', 'scandal', 'stock'
+        'policy', 'politics', 'power', 'prime minister', 'protest', 'relations', 'rights', 'scandal', 'stock', 'shares', 'regulations'
     },
     "science_tech": {
         'algorithms', 'angular', 'ansible', 'api', 'app', 'assembly', 'aws', 'azure', 'backend', 'bash', 'bitbucket',
@@ -116,8 +118,8 @@ def mark_genre(title_description_col):
         'numpy', 'ollama', 'openai', 'pandas', 'pcreact', 'php', 'postgresql', 'programming', 'prompt', 'python', 'pytorch', 'rag', 'react', 
         'reactjs', 'redis', 'refactoring', 'ruby', 'rust', 'science', 'scikit', 'shell', 'scripting', 'software', 'sql', 'sqlite',
         'structures', 'supabase', 'sysadmin', 'tailwind', 'terminal', 'terraform', 'transformers', 'typescript', 'ubuntu', 'vercel',
-        'vscode', 'vue', 'web', 'whatsapp', 'nvidia', 'built', 'robot', 'machine','technology', 'cyber', 'electronics', 'Firmware',
-        'raspberry', 'gadgets'
+        'vscode', 'vue', 'web', 'whatsapp', 'nvidia', 'built', 'robot','technology', 'cyber', 'electronics', 'Firmware',
+        'raspberry', 'gadgets', 'robotics'
         },
     "educational_study": {
         'academic', 'accounts', 'recall', 'admissions', 'algebra', 'arts', 'assignment', 'banking', 'bca', 'biology', 'upsc', 
@@ -131,7 +133,7 @@ def mark_genre(title_description_col):
         'productivity', 'professor', 'pustak', 'pyq', 'rattamar', 'repetition', 'report card', 'revision','roadmap', 'samjho','sample', 'sarkari',
         'sat', 'scholarship', 'school', 'schooling', 'science', 'seekho', 'semester', 'shiksha','shikshak', 'source', 'spaced', 'ssc', 'student',
         'study', 'subject', 'syllabus', 'taiyari', 'teacher', 'tech ', 'tech lead', 'textbook', 'timetable', 'toefl', 'topper', 'tuition', 'university',
-            
+        'education', 'educate','learn',
     }
     
     }
@@ -144,7 +146,7 @@ def mark_genre(title_description_col):
         'emotional', 'end', 'ending', 'enemy', 'ep', 'episode', 'error', 'event', 'explained', 'family', 'features', 'fire', 'first',
         'fix', 'force', 'free', 'front', 'full', 'fun', 'funny', 'gaadi', 'gadget', 'gadi', 'game', 'get', 'gift', 'girl', 'glitch', 'goal', 
         'grwm', 'guide', 'gym', 'haar', 'hack', 'hacker', 'hacking', 'hacks', 'hand', 'handling', 'help','war', 'work', 'workout', 'world',
-        'hero', 'high', 'highlights', 'historical', 'history', 'home', 'hostel', 'how', 'international','viral', 'visa', 'vlog', 'vs'
+        'hero', 'high', 'highlights', 'historical', 'history', 'home', 'hostel', 'how', 'international','viral', 'visa', 'vlog', 'vs',
         'interview', 'ipad', 'jeet', 'job', 'kaise', 'laptop', 'large', 'laws', 'league', 'learning', 'life', 'live', 'graphics',
         'local', 'loot', 'market', 'match', 'material', 'meetup', 'mic', 'microphone', 'minister', 'mobile', 'modded',
         'modify', 'moment', 'monument', 'morning', 'motivation', 'motorcycle', 'muscle', 'music', 'nature', 'new', 'news', 'night',

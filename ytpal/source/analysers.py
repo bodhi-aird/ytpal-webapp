@@ -75,8 +75,13 @@ def genre_analysis(master_df, subs = 1):
             breakout_median = data_row["breakout_median"]
             algo_median = data_row["algo_median"]
             genre = data_row["genre"]
+
+            if content_share == maximum_content_share and breakout_median >= high_traction and algo_median >= high_traction:
+                            genres_insight_summary_ls.append(f"Core Genre(Primary), Keep grinding : '{genre.capitalize()}'")
+                            core_genre_name = genre
+                            core_genre_name_status = True
             
-            if content_share == minimum_content_share and breakout_median >= high_traction and algo_median >= high_traction:
+            elif content_share == minimum_content_share and breakout_median >= high_traction and algo_median >= high_traction:
                 genres_insight_summary_ls.append(f"Seconday Performing Genre : '{genre.capitalize()}'")
                 great_genre_name_ls.append(genre)
                 great_genre_status = True
@@ -86,11 +91,6 @@ def genre_analysis(master_df, subs = 1):
                 genres_insight_summary_ls.append(f"Genre Hampering Channel : '{genre.capitalize()}'")
                 hidden_bad_genre_count += 1
                 worst_genre_name_ls.append(genre)
-        
-            elif content_share == maximum_content_share and breakout_median >= high_traction and algo_median >= high_traction:
-                genres_insight_summary_ls.append(f"Core Genre(Primary), Keep grinding : '{genre.capitalize()}'")
-                core_genre_name = genre
-                core_genre_name_status = True
         
             elif content_share == minimum_content_share and breakout_median <= lower_traction and algo_median <= lower_traction:
                 genres_insight_summary_ls.append(f"DROP THIS GENRE : '{genre.capitalize()}'")
@@ -107,12 +107,12 @@ def genre_analysis(master_df, subs = 1):
                 genres_insight_summary_ls.append(f"Another Hidden Good Genre! that's working well... : '{genre.capitalize()}'")
                 hidden_good_genre_count += 1
         
-            elif maximum_content_share > content_share > baseline_content_share and breakout_median <= lower_traction and algo_median <= lower_traction:
+            elif hidden_bad_genre_count < 3 and (maximum_content_share > content_share > baseline_content_share and breakout_median <= lower_traction and algo_median <= lower_traction):
                 genres_insight_summary_ls.append(f"Stop putting effort in this Genre : '{genre.capitalize()}'")
                 hidden_bad_genre_count += 1
                 worst_genre_name_ls.append(genre)
         
-            elif minimum_content_share < content_share < baseline_content_share and breakout_median <= lower_traction and algo_median <= lower_traction:
+            elif hidden_bad_genre_count < 4 and (minimum_content_share < content_share < baseline_content_share and breakout_median <= lower_traction and algo_median <= lower_traction):
                 genres_insight_summary_ls.append(f"This Genre Is Waste of Time : '{genre.capitalize()}'")
                 hidden_bad_genre_count += 1
                 worst_genre_name_ls.append(genre)
@@ -145,10 +145,11 @@ def genre_analysis(master_df, subs = 1):
             Focus on testing fewer, more promising content categories and monitor their performance before committing heavily to them."""
 
         elif not core_genre_name_status and not great_genre_status and hidden_bad_genre_count <= 1:
-            genre_analysis_conclusion = """NO CORE GENRE IDENTIFIED YET: > >\n
-            Your channel does not currently show one clearly dominant or exceptionally high-performing genre.\n
-            However, there are NO underperforming genres to indicate a serious content strategy problem.
-            Keep experimenting with your existing genres and monitor which categories consistently perform better.\n
+            genre_analysis_conclusion = """NO CORE GENRE IDENTIFIED YET: > [KEEP EXPERIMENTING WITH YOUR EXISTING GENREs]\n
+            
+            Currently your channel does not show one clearly dominant or exceptionally high-performing genre.
+            However, there are NO underperforming genres to indicate a serious content strategy problem.\n
+            And, monitor which categories consistently perform better.\n
             Over time, focus more of your content around the genres that demonstrate stronger performance."""
 
     return genres_insight_summary_ls, genre_metrices_overview, genre_analysis_conclusion
